@@ -10,7 +10,7 @@ jobs:
     uses: ./.github/workflows/ci-backend-main.yml
   deploy:
     needs: ci
-    runs-on: ubunto-latest
+    runs-on: ubuntu-latest
     name: Deploy Railway
     steps:
       - uses: actions/checkout@v3
