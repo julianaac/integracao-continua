@@ -15,6 +15,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '11'
-          distribuition: 'zulu'
+          distribution: 'zulu'
       - name: Compilação / Test / Package
-        run: echo "Status ${{ job.status }}"
+        working-directory: back-end/
+        run: mvn --activate-profiles prod package
