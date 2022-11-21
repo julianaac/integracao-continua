@@ -15,24 +15,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Set up JDK 11
-        uses: actions/setup-java@v3
+      - uses: actions/setup-node@v3
         with:
-          java-version: '11'
-          distribution: 'zulu'
+          node-version: 16  
+      
       - name: Compilação / Test / Package
         working-directory: front-end/
-        run: mvn --activate-profiles prod test
+        run: npm run build --prod
   package:
     needs: teste
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Set up JDK 11
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'zulu'
       - name: Compilação / Test / Package / build
         working-directory: front-end/
-        run: mvn --activate-profiles prod -DskipTests package
+        run: npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
