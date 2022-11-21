@@ -1,4 +1,4 @@
-name: CI Back-end
+name: CICD front
 
 on:
   push:
