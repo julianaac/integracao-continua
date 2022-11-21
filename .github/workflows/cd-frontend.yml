@@ -9,7 +9,7 @@ jobs:
 
   ci:
     name: CI Workflow Main
-    uses: ./.github/workflows/cd-frontend-main.yml
+    uses: ./.github/workflows/ci-frontend-main.yml
   deploy:
     needs: ci
     runs-on: ubuntu-latest
