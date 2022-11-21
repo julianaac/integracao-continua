@@ -9,7 +9,7 @@ on:
   pull_request:
     paths:
       - 'front-end/**'
-  workflow_call:
+  workflow_dispatch:
 jobs:
   teste:
     runs-on: ubuntu-latest
