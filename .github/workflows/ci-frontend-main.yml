@@ -18,6 +18,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16  
+      - name: Install
+        working-directory: front-end/
+        run: npm install 
       
       - name: Compilação / Test / Package
         working-directory: front-end/
