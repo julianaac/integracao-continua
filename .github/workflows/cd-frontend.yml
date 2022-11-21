@@ -21,6 +21,9 @@ jobs:
           node-version: 16
       - name: Instalação do cliente Railway
         run: npm install -g @railway/cli
+      - name: Install
+        working-directory: front-end/
+        run: npm install 
       - name: Deploy
         working-directory: front-end/
         run: railway up --detach --service sgcm-julianaAbreu-front
