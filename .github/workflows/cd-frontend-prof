@@ -15,6 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy Railway
     steps:
+      - name: restaura cache
+      - uses: actions/cache@v3
+        with:
+          path: front-end/dist/
+          key: build-${{github.sha}}
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -22,7 +27,7 @@ jobs:
       - name: Instalação do cliente Railway
         run: npm install -g @railway/cli
       - name: Deploy
-        working-directory: front-end/
+        working-directory: front-end/dist/sgcmapp
         run: railway up --detach --service sgcmapp
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
