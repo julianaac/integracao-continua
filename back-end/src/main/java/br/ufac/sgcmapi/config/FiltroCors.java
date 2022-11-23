@@ -22,7 +22,8 @@ public class FiltroCors {
                 "https://localhost:4200", 
                 "https://sgcm-julianaabreu.up.railway.app",
                 "https://sgcm-julianaabreu-front2-production.up.railway.app",
-                "https://sgcm-julianaabreu-front-production.up.railway.app")
+                "https://sgcm-julianaabreu-front-production.up.railway.app",
+                "https://sgcmapp-juliana.netlify.app")
         );
         corsConfig.setAllowedMethods(Arrays.asList("*"));
         corsConfig.setAllowedHeaders(Arrays.asList("*"));
